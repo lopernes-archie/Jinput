@@ -43,8 +43,7 @@ class Security {
 		 */
 		if (is_array($str))
 		{
-			while (list($key) = each($str))
-			{
+			foreach($str as $key => $value) {
 				$str[$key] = self::xss_clean($str[$key]);
 			}
 			return $str;
